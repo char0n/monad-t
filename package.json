@@ -1,0 +1,29 @@
+{
+  "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
+  "contributors": [],
+  "name": "monadT",
+  "description": "Transformers for monadic algebraic structures",
+  "keywords": "monad transformer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/char0n/monadT",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/char0n/monadT.git"
+  },
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "scripts": {},
+  "readme": "README.md",
+  "dependencies": {
+    "fantasy-land": "=3.3.0",
+    "ramda": "=0.24.1",
+    "ramda-adjunct": "=1.12.0"
+  },
+  "devDependencies": {
+    "fluture": "=7.0.1",
+    "monet": "=0.9.0-alpha.2"
+  }
+}
