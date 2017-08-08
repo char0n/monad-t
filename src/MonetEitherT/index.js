@@ -22,13 +22,5 @@ const MonetEitherT = ({ monet, fluture }) => {
   return Object.assign(type, Either);
 };
 
-const monet = require('monet');
-const fluture = require('fluture');
-
-const EitherT = MonetEitherT({ monet, fluture });
-const FutureTEither = FlutureTMonetEither({ monet, fluture });
-
-console.dir(FutureTEither(1));
-
 
 module.exports = MonetEitherT;
