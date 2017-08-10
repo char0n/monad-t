@@ -4,6 +4,8 @@ const { isUndefined, isNotNull } = require('ramda-adjunct');
 const { Either } = require('monet');
 const fl = require('fantasy-land');
 
+const { aliasesForType } = require('../utils');
+
 let isFuture = null;
 let FlutureTMonetEither = null;
 try {
@@ -18,6 +20,8 @@ function MonetEitherT(monad, isRightValue = true) {
       return FlutureTMonetEither.fromFuture(monad);
     } else if (monad instanceof Identity.fn.init) {
       return Either.of(monad.get());
+    } else if (monad instanceof Either.fn.init && isNotNull(FlutureTMonetEither)) {
+      return FlutureTMonetEither.fromEither(monad);
     }
     return MonetEitherT[fl.of](monad);
   }
@@ -32,6 +36,10 @@ MonetEitherT.left = function(monad) {
 
 MonetEitherT.right = function(monad) {
   return MonetEitherT[fl.of](monad)
+};
+
+MonetEitherT.fromEither = function(either) {
+  return FlutureTMonetEither.fromEither(either);
 };
 
 MonetEitherT.prototype.isRight = function() {
@@ -87,6 +95,8 @@ MonetEitherT.prototype[fl.ap] = function(monadWithFn) {
     )
   );
 };
+
+aliasesForType(MonetEitherT);
 
 
 module.exports = MonetEitherT;

@@ -15,7 +15,17 @@ const aliases = (obj) => {
     .map(over(lensIndex(0), replace('fantasy-land/', '')));
 };
 
+const aliasesForType = (type) => {
+  aliases(type).forEach(([alias, fn]) => {
+    type[alias] = fn;
+  });
+  aliases(type.prototype).forEach(([alias, fn]) => {
+    type.prototype[alias] = fn;
+  });
+};
+
 
 module.exports = {
   aliases,
+  aliasesForType,
 };

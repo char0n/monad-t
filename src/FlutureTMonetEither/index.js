@@ -5,7 +5,7 @@ const fl = require('fantasy-land');
 const { Either, Identity } = require('monet');
 const { Future, isFuture } = require('fluture');
 
-const { aliases } = require('../utils');
+const { aliasesForType } = require('../utils');
 
 
 function FlutureTMonetEither(monad) {
@@ -44,13 +44,7 @@ FlutureTMonetEither.fromFuture = function (future) {
   return this[fl.of](future.map(Either.Right));
 };
 
-
-aliases(FlutureTMonetEither).forEach(([alias, fn]) => {
-  FlutureTMonetEither[alias] = fn;
-});
-aliases(FlutureTMonetEither.prototype).forEach(([alias, fn]) => {
-  FlutureTMonetEither.prototype[alias] = fn;
-});
+aliasesForType(FlutureTMonetEither);
 
 
 module.exports = FlutureTMonetEither;
