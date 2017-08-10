@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "strict": [2, "global"],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+    "no-underscore-dangle": 0
+  }
+}

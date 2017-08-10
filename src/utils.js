@@ -15,6 +15,7 @@ const aliases = (obj) => {
     .map(over(lensIndex(0), replace('fantasy-land/', '')));
 };
 
+/* eslint-disable no-param-reassign */
 const aliasesForType = (type) => {
   aliases(type).forEach(([alias, fn]) => {
     type[alias] = fn;
@@ -23,6 +24,7 @@ const aliasesForType = (type) => {
     type.prototype[alias] = fn;
   });
 };
+/* eslint-enable */
 
 
 module.exports = {

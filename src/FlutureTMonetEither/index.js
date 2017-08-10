@@ -16,31 +16,30 @@ function FlutureTMonetEither(monad) {
       return FlutureTMonetEither.fromValue(monad.get());
     } else if (monad instanceof Either.fn.init) {
       return FlutureTMonetEither.fromEither(monad);
-    } else {
-      throw new Error('FlutureTMonetEither can transform only specific monad types');
     }
+    throw new Error('FlutureTMonetEither can transform only specific monad types');
   }
 
   this.run = monad;
 }
 
-FlutureTMonetEither[fl.of] = function(run) {
+FlutureTMonetEither[fl.of] = function of(run) {
   return new this(run);
 };
 
-FlutureTMonetEither.fromValue = function (val) {
+FlutureTMonetEither.fromValue = function fromValue(val) {
   return this[fl.of](Future.of(Either.Right(val)));
 };
 
-FlutureTMonetEither.fromMonad = function(monad) {
+FlutureTMonetEither.fromMonad = function fromMonad(monad) {
   return this[fl.of](Future.of(monad));
 };
 
-FlutureTMonetEither.fromEither = function (either) {
+FlutureTMonetEither.fromEither = function fromEither(either) {
   return this[fl.of](Future.of(either));
 };
 
-FlutureTMonetEither.fromFuture = function (future) {
+FlutureTMonetEither.fromFuture = function fromFuture(future) {
   return this[fl.of](future.map(Either.Right));
 };
 

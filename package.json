@@ -16,10 +16,14 @@
     "node": ">=7.0.0"
   },
   "scripts": {
-    "test": "better-npm-run test"
+    "test": "better-npm-run test",
+    "lint": "better-npm-run lint",
+    "lint:fix": "better-npm-run lint:fix"
   },
   "betterScripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "readme": "README.md",
   "dependencies": {
@@ -33,7 +37,12 @@
     "mocha": "=3.4.2",
     "mocha-junit-reporter": "=1.13.0",
     "mocha-multi-reporters": "=1.1.4",
-    "better-npm-run": "=0.0.15"
+    "better-npm-run": "=0.0.15",
+    "eslint": "=4.3.0",
+    "eslint-config-airbnb": "=15.1.0",
+    "eslint-plugin-import": "=2.7.0",
+    "eslint-plugin-jsx-a11y": "=5.1.1",
+    "eslint-plugin-react": "=7.1.0"
   },
   "peerDependencies": {
     "fluture": "=7.0.1",
