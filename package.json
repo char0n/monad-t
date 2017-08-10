@@ -22,7 +22,7 @@
     "ramda": "=0.24.1",
     "ramda-adjunct": "=1.12.0"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "fluture": "=7.0.1",
     "monet": "=0.9.0-alpha.2"
   }

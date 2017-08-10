@@ -1,56 +1,56 @@
 'use strict';
 
+const { isUndefined } = require('ramda-adjunct');
 const fl = require('fantasy-land');
+const { Either, Identity } = require('monet');
+const { Future, isFuture } = require('fluture');
 
 const { aliases } = require('../utils');
 
 
-const FlutureTMonetEither = ({ fluture, monet }) => {
-  const { Future, isFuture } = fluture;
-  const { Identity, Either } = monet;
-
-  function FutureEither(run) {
-    if (!new.target) {
-      if (isFuture(run)) {
-        return FutureEither.fromFuture(run);
-      } else if (run instanceof Identity.fn.init) {
-        return FutureEither.fromValue(run.get());
-      } else if (run instanceof Either.fn.init) {
-        return FutureEither.fromEither(run);
-      }
-      return FutureEither.fromValue(run);
+function FlutureTMonetEither(monad) {
+  if (isUndefined(new.target)) {
+    if (isFuture(monad)) {
+      return FlutureTMonetEither.fromFuture(monad);
+    } else if (monad instanceof Identity.fn.init) {
+      return FlutureTMonetEither.fromValue(monad.get());
+    } else if (monad instanceof Either.fn.init) {
+      return FlutureTMonetEither.fromEither(monad);
+    } else {
+      throw new Error('FlutureTMonetEither can transform only specific monad types');
     }
-
-    this.run = run;
   }
 
-  FutureEither[fl.of] = function(run) {
-    return new this(run);
-  };
+  this.run = monad;
+}
 
-  FutureEither.fromValue = function (val) {
-    return this[fl.of](Future.of(Either.Right(val)));
-  };
-
-  FutureEither.fromEither = function (either) {
-    return this[fl.of](Future.of(either));
-  };
-
-  FutureEither.fromFuture = function (future) {
-    return this[fl.of](future.map(Either.Right));
-  };
-
-
-  aliases(FutureEither).forEach(([alias, fn]) => {
-    FutureEither[alias] = fn;
-  });
-  aliases(FutureEither.prototype).forEach(([alias, fn]) => {
-    FutureEither.prototype[alias] = fn;
-  });
-
-
-  return FutureEither;
+FlutureTMonetEither[fl.of] = function(run) {
+  return new this(run);
 };
+
+FlutureTMonetEither.fromValue = function (val) {
+  return this[fl.of](Future.of(Either.Right(val)));
+};
+
+FlutureTMonetEither.fromMonad = function(monad) {
+  return this[fl.of](Future.of(monad));
+};
+
+FlutureTMonetEither.fromEither = function (either) {
+  return this[fl.of](Future.of(either));
+};
+
+FlutureTMonetEither.fromFuture = function (future) {
+  return this[fl.of](future.map(Either.Right));
+};
+
+
+aliases(FlutureTMonetEither).forEach(([alias, fn]) => {
+  FlutureTMonetEither[alias] = fn;
+});
+aliases(FlutureTMonetEither.prototype).forEach(([alias, fn]) => {
+  FlutureTMonetEither.prototype[alias] = fn;
+});
 
 
 module.exports = FlutureTMonetEither;
