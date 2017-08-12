@@ -19,6 +19,11 @@
       "exports": "always-multiline",
       "functions": "never"
     }],
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "optionalDependencies": true
+      }
+    ]
   }
 }

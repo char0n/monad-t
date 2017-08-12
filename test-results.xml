@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.002" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2017-08-10T15:47:05" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="0.003" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-08-12T17:42:28" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="FlutureTMonetEither" timestamp="2017-08-10T15:47:05" tests="1" file="C:\Users\vladi\Documents\GitHub\monadT\test\FlutureTMonetEither\index.js" failures="0" time="0.002">
-    <testcase name="FlutureTMonetEither test" time="0.002" classname="test">
+  <testsuite name="FlutureTMonetEither" timestamp="2017-08-12T17:42:28" tests="1" file="C:\Users\vladi\Documents\GitHub\monadT\test\FlutureTMonetEither\index.js" failures="0" time="0">
+    <testcase name="FlutureTMonetEither test" time="0" classname="test">
+    </testcase>
+  </testsuite>
+  <testsuite name="MonetEitherT" timestamp="2017-08-12T17:42:28" tests="0" file="C:\Users\vladi\Documents\GitHub\monadT\test\MonetEitherT\index.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="constructor" timestamp="2017-08-12T17:42:28" tests="0" file="C:\Users\vladi\Documents\GitHub\monadT\test\MonetEitherT\index.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="call as a static function" timestamp="2017-08-12T17:42:28" tests="4" file="C:\Users\vladi\Documents\GitHub\monadT\test\MonetEitherT\index.js" failures="0" time="0.003">
+    <testcase name="MonetEitherT constructor call as a static function should return instance of Either when Identity monad provided" time="0.002" classname="should return instance of Either when Identity monad provided">
+    </testcase>
+    <testcase name="MonetEitherT constructor call as a static function should return instance of MonetEitherT when Unknown monad provided" time="0" classname="should return instance of MonetEitherT when Unknown monad provided">
+    </testcase>
+    <testcase name="MonetEitherT constructor call as a static function should return instance of FlutureTMonetEither when Fluture monad provided" time="0.001" classname="should return instance of FlutureTMonetEither when Fluture monad provided">
+    </testcase>
+    <testcase name="MonetEitherT constructor call as a static function should return instance of FlutureTMonetEither when Either monad provided" time="0" classname="should return instance of FlutureTMonetEither when Either monad provided">
     </testcase>
   </testsuite>
 </testsuites>
