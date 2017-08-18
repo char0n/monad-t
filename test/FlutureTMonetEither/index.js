@@ -8,7 +8,7 @@ const { sum } = require('ramda');
 const chai = require('chai');
 
 const FlutureTMonetEither = require('../../src/FlutureTMonetEither');
-const { isFlutureTMonetEither, liftFuture, liftEither } = require('../../src/FlutureTMonetEither/util');
+const { isFlutureTMonetEither, liftFuture, liftEither } = require('../../src/FlutureTMonetEither/utils');
 
 
 const { assert } = chai;
