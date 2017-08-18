@@ -1,6 +1,6 @@
 # monadT
 
-Transformers for monadic algebraic structures
+Transformers for monadic algebraic structures bridging types from various monadic libraries.
 
 ## Example
 
