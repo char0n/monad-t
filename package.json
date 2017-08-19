@@ -16,11 +16,13 @@
     "node": ">=7.0.0"
   },
   "scripts": {
+    "docs": "better-npm-run docs",
     "test": "better-npm-run test",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix"
   },
   "betterScripts": {
+    "docs": "jsdoc -c jsdoc.json",
     "test": "mocha",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix"
@@ -44,7 +46,9 @@
     "mocha-multi-reporters": "=1.1.4",
     "sinon": "=2.3.8",
     "fluture": "=7.0.1",
-    "monet": "=0.9.0-alpha.2"
+    "monet": "=0.9.0-alpha.2",
+    "jsdoc": "=3.5.3",
+    "docdash": "git+https://github.com/char0n/docdash.git#16d3b4e677ec7286bbf07badfc9ee37c93101d39"
   },
   "optionalDependencies": {
     "fluture": "=7.0.1",

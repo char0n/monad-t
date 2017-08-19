@@ -1,0 +1,29 @@
+{
+  "title": "monadT",
+  "github": "https://github.com/char0n/monadT",
+  "gitter": "https://github.com/char0n/monadT/issues",
+  "latest": "https://char0n.github.io/monadT/",
+  "try": "https://npm.runkit.com/monadT",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+  "include": ["./src"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "\\.spec\\.js$"
+  },
+  "opts": {
+  "template": "./node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "./docs/",
+    "recurse": true,
+    "readme": "./README.md",
+    "package": "./package.json"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  }
+}

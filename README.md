@@ -1,6 +1,7 @@
 # monadT
 
 Transformers for monadic algebraic structures bridging types from various monadic libraries.
+All transformers are fully [fantasy-land](https://github.com/fantasyland/fantasy-land) compatible.
 
 ## Example
 
