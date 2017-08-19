@@ -32,7 +32,7 @@ you won't end up with  `Cannot find module` error when requiring.
 
 ```javascript
 const { MonetEitherT: EitherT } = require('monadT/MonetEitherT');
-const { FlutureTMonetEither: FutureTEither } = require('monadT');
+const { FlutureTMonetEither: FutureTEither } = require('monadT/FlutureTMonetEither');
 
 
 EitherT(Identity.of(1)); //=> Either.Right(1)
