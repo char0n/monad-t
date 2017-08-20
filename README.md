@@ -45,3 +45,7 @@ FutureTEither(Identity.of(1)); //=> FlutureTMonetEither(1)
 FutureTEither(Future.of(1)); //=> FlutureTMonetEither(1)
 FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 ```
+
+## API Documentation
+
+Please refer to [https://char0n.github.io/monadT/](https://char0n.github.io/monadT/).
