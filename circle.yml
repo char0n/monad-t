@@ -1,6 +1,5 @@
 dependencies:
   override:
-    - npm install ramda
     - npm install
 
 general:
@@ -23,7 +22,9 @@ test:
     - npm run lint
     - nvm use 6 && npm run test
     - nvm use 7 && npm run test
-    - nvm install 8 && nvm use 8 && npm run test
+    - nvm install 8 && nvm use 8 && npm run test:
+        environment:
+              MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
 
 deployment:
   staging:
@@ -31,4 +32,4 @@ deployment:
     commands:
       - npm run docs
       - chmod -R +x ./scripts
-      - ./scripts/deploy-ghpages.sh docs/ramda-adjunct
+      - ./scripts/deploy-ghpages.sh docs/monadT
