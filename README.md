@@ -61,6 +61,6 @@ https://www.linkedin.com/in/vladimirgorej/
 
 ### Contributors
 
-Michael Kuk
-Michal Svely
-Honza Beseda
+ - Michael Kuk
+ - Michal Svely
+ - Honza Beseda
