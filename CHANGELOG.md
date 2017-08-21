@@ -1,3 +1,9 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/char0n/monad-t/compare/v0.0.2...v0.0.3) (2017-08-21)
+
+* fix main entry in package.json 
+
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/char0n/monad-t/compare/v0.0.1...v0.0.2) (2017-08-21)
 
