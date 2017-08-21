@@ -49,7 +49,7 @@ FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 ## API Documentation
 
 [0.0.1](https://char0n.github.io/monad-t/0.0.2), [0.0.2](https://char0n.github.io/monad-t/0.0.2),
-[0.0.3](https://char0n.github.io/monad-t/0.0.3)
+[0.0.3](https://char0n.github.io/monad-t/0.0.3), [0.1.0](https://char0n.github.io/monad-t/0.1.0)
 
 
 ### Author
