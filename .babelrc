@@ -1,5 +1,7 @@
 {
   "plugins": [
+    // no stage
+    "transform-new-target",
     // stage-3
     "transform-object-rest-spread",
     "transform-async-generator-functions",
