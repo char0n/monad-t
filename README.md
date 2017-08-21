@@ -49,3 +49,17 @@ FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 ## API Documentation
 
 Please refer to [https://char0n.github.io/monadT/](https://char0n.github.io/monadT/).
+
+### Author
+
+char0n (Vladimir Gorej)
+ 
+vladimir.gorej@gmail.com
+ 
+https://www.linkedin.com/in/vladimirgorej/
+
+### Contributors
+
+Michael Kuk
+Michal Svely
+Honza Beseda
