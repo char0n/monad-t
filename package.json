@@ -4,14 +4,14 @@
   "name": "monad-t",
   "description": "Transformers for monadic algebraic structures",
   "keywords": "monad transformer algebraic structures",
-  "version": "0.1.0",
+  "version": "0.0.3",
   "homepage": "https://github.com/char0n/monad-t",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/char0n/monad-t.git"
   },
-  "main": ".src/index.js",
+  "main": "./src/index.js",
   "engines": {
     "node": ">=6.0.0"
   },
