@@ -62,5 +62,6 @@
   "optionalDependencies": {
     "fluture": "=7.0.1",
     "monet": "=0.9.0-alpha.2"
-  }
+  },
+  "tonicExampleFilename": "tonicExample.js"
 }
