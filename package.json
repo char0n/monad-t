@@ -20,14 +20,16 @@
     "docs": "better-npm-run docs",
     "test": "better-npm-run test",
     "lint": "better-npm-run lint",
-    "lint:fix": "better-npm-run lint:fix"
+    "lint:fix": "better-npm-run lint:fix",
+    "nsp:check": "better-npm-run nsp:check"
   },
   "betterScripts": {
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "docs": "jsdoc -c jsdoc.json",
     "test": "mocha",
     "lint": "eslint ./",
-    "lint:fix": "eslint ./ --fix"
+    "lint:fix": "eslint ./ --fix",
+    "nsp:check": "nsp check"
   },
   "readme": "README.md",
   "dependencies": {
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "better-npm-run": "=0.0.15",
+    "nsp": "=2.6.3",
     "chai": "=4.1.0",
     "eslint": "=4.3.0",
     "eslint-config-airbnb": "=15.1.0",

@@ -20,6 +20,7 @@ machine:
 test:
   override:
     - npm run lint
+    - npm run nsp:check
     - nvm use 6 && npm run test
     - nvm use 7 && npm run test
     - nvm install 8 && nvm use 8 && npm run test:
