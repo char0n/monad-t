@@ -1,3 +1,8 @@
+<a name="0.1.0"></a>
+## [0.0.3](https://github.com/char0n/monad-t/compare/v0.0.3...v0.1.0) (2017-08-21)
+
+* add support for node 4 and higher
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/char0n/monad-t/compare/v0.0.2...v0.0.3) (2017-08-21)
 
