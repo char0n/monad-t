@@ -96,7 +96,7 @@ FlutureTMonetEither.fromFuture = function fromFuture(future) {
  * @param {FlutureTMonetEither} futureEither
  * @returns {FlutureTMonetEither}
  */
-FlutureTMonetEither.cache = function caech(futureEither) {
+FlutureTMonetEither.cache = function cache(futureEither) {
   return this.of(Future.cache(futureEither.run));
 };
 
