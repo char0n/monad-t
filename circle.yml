@@ -33,4 +33,4 @@ deployment:
     commands:
       - npm run docs
       - chmod -R +x ./scripts
-      - ./scripts/deploy-ghpages.sh docs/monadT
+      - ./scripts/deploy-ghpages.sh docs/monad-t

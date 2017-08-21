@@ -12,7 +12,7 @@ class Monad {
   }
 
   static get ['@@type']() {
-    return 'monadT/Monad';
+    return 'monad-t/Monad';
   }
 
   constructor(value) {

@@ -1,15 +1,15 @@
 {
   "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
   "contributors": [],
-  "name": "monadT",
+  "name": "monad-t",
   "description": "Transformers for monadic algebraic structures",
   "keywords": "monad transformer algebraic structures",
-  "version": "0.0.1",
-  "homepage": "https://github.com/char0n/monadT",
+  "version": "0.0.2",
+  "homepage": "https://github.com/char0n/monad-t",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/char0n/monadT.git"
+    "url": "git://github.com/char0n/monad-t.git"
   },
   "main": ".src/index.js",
   "engines": {

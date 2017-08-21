@@ -1,4 +1,4 @@
-# monadT
+# monad-t
 
 Transformers for monadic algebraic structures bridging types from various monadic libraries.
 All transformers are fully [fantasy-land](https://github.com/fantasyland/fantasy-land) compatible.
@@ -6,7 +6,7 @@ All transformers are fully [fantasy-land](https://github.com/fantasyland/fantasy
 ## Example
 
 ```javascript
-const { MonetEitherT: EitherT, FlutureTMonetEither: FutureTEither } = require('monadT');
+const { MonetEitherT: EitherT, FlutureTMonetEither: FutureTEither } = require('monad-t');
 const { Future } = require('fluture');
 const { Identity, Either, Maybe } = require('monet');
 
@@ -31,8 +31,8 @@ We recommend to use requires from a specific modules of this library so that
 you won't end up with  `Cannot find module` error when requiring.
 
 ```javascript
-const { MonetEitherT: EitherT } = require('monadT/MonetEitherT');
-const { FlutureTMonetEither: FutureTEither } = require('monadT/FlutureTMonetEither');
+const { MonetEitherT: EitherT } = require('monad-t/MonetEitherT');
+const { FlutureTMonetEither: FutureTEither } = require('monad-t/FlutureTMonetEither');
 
 
 EitherT(Identity.of(1)); //=> Either.Right(1)
@@ -48,7 +48,7 @@ FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 
 ## API Documentation
 
-[0.0.1](https://char0n.github.io/monadT/0.0.1), [0.1.0](https://char0n.github.io/monadT/0.1.0)
+[0.0.1](https://char0n.github.io/monad-t/0.0.2), [0.0.2](https://char0n.github.io/monad-t/0.0.2)
 
 
 ### Author

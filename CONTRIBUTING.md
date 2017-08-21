@@ -1,4 +1,4 @@
-# Contributing to monadT
+# Contributing to monad-t
 
 As a contributor, here are the guidelines we would like you to follow:
 
@@ -37,7 +37,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git push origin my-fix-branch
     ```
 
-* In GitHub, send a pull request to `monadT:master`.
+* In GitHub, send a pull request to `monad-t:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the test suites to ensure tests are still passing.
@@ -91,7 +91,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the monadT change log**.
+we use the git commit messages to **generate the monad-t change log**.
 
 ### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
@@ -112,7 +112,7 @@ to read on GitHub as well as in various git tools.
 
 Footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/char0n/monadT/commits/master))
+Samples: (even more [samples](https://github.com/char0n/monad-t/commits/master))
 
 ```
 docs(changelog): update change log to beta.5

@@ -1,9 +1,9 @@
 {
-  "title": "monadT",
-  "github": "https://github.com/char0n/monadT",
-  "gitter": "https://github.com/char0n/monadT/issues",
-  "latest": "https://char0n.github.io/monadT/",
-  "try": "https://npm.runkit.com/monadT",
+  "title": "monad-t",
+  "github": "https://github.com/char0n/monad-t",
+  "gitter": "https://github.com/char0n/monad-t/issues",
+  "latest": "https://char0n.github.io/monad-t/",
+  "try": "https://npm.runkit.com/monad-t",
   "tags": {
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc","closure"]
