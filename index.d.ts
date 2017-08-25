@@ -55,7 +55,8 @@ declare module "monad-t" {
   }
 
   interface MonetEitherTStatic {
-    new(monad: any, isRightValue?: boolean): MonetEitherT | Either | FlutureTMonetEither
+    new(monad: any, isRightValue?: boolean): MonetEitherT
+    (monad: any, isRightValue?: boolean): MonetEitherT | Either | FlutureTMonetEither
     left(monad: any): MonetEitherT | Either | FlutureTMonetEither
     of(monad: any): MonetEitherT | Either | FlutureTMonetEither
     right(monad: any): MonetEitherT | Either | FlutureTMonetEither
