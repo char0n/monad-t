@@ -1,9 +1,8 @@
-
 declare module "monad-t" {
-  import { Fluture } from 'fluture'
+  import Fluture from 'fluture'
   import { Either } from 'monet'
 
-  interface Cancel {
+  interface Cancellable {
     (): void
   }
 
@@ -13,7 +12,7 @@ declare module "monad-t" {
     chainEither(fn: (arg: any) => Either<any, any>): FlutureTMonetEither
     chainFuture(fn: (arg: any) => Fluture): FlutureTMonetEither
     filter(predicate: (arg: any) => boolean, fnOrValue: any): FlutureTMonetEither
-    fork(leftFn: (err: any) => void, rightFn: (val: any) => void): Cancel
+    fork(leftFn: (err: any) => void, rightFn: (val: any) => void): Cancellable
     map(fn: (arg: any) => any): FlutureTMonetEither
     mapRej(fn: (arg: any) => any): FlutureTMonetEither
     promise(): Promise<any>
@@ -43,10 +42,11 @@ declare module "monad-t" {
     tryP(fn: () => Promise<any>): FlutureTMonetEither
   }
 
-  export const FlutureTMonetEither: FlutureTMonetEitherStatic
+  export const FlutureTMonetEither: FlutureTMonetEitherStatic;
 
   interface MonetEitherT {
     ap(monad: MonetEitherT): MonetEitherT
+    map(fn: (arg: any) => any): MonetEitherT
     chain(fn: (arg: any) => MonetEitherT): MonetEitherT
     isLeft(): boolean
     isRight(): boolean
