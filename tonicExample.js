@@ -1,8 +1,9 @@
+require('fantasy-land');
 const { Future } = require('fluture');
-const { Identity, Either } = require('monet@0.9.0-alpha.2');
+const { Identity, Either } = require('monet');
 
-const { MonetEitherT: EitherT } = require('monad-t/MonetEitherT');
-const { FlutureTMonetEither: FutureTEither } = require('monad-t/FlutureTMonetEither');
+const { MonetEitherT: EitherT } = require('monad-t');
+const { FlutureTMonetEither: FutureTEither } = require('monad-t');
 
 
 EitherT(Identity.of(1)); // => Either.Right(1)

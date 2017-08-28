@@ -1,10 +1,10 @@
 'use strict';
 
-const FLutureTMonetEither = require('./FlutureTMonetEither');
+const FlutureTMonetEither = require('./FlutureTMonetEither');
 const MonetEitherT = require('./MonetEitherT');
 
 
 module.exports = {
-  FLutureTMonetEither,
+  FlutureTMonetEither,
   MonetEitherT,
 };
