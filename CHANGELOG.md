@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/char0n/monad-t/compare/v0.1.0...v0.2.0) (2017-08-28)
+
+
+### Features
+
+* **typescriptDefinitions:** add basic TSDs ([de5dabe](https://github.com/char0n/monad-t/commit/de5dabe))
+
+
+
 <a name="0.1.0"></a>
 ## [0.0.3](https://github.com/char0n/monad-t/compare/v0.0.3...v0.1.0) (2017-08-21)
 
