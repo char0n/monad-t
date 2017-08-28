@@ -22,6 +22,13 @@ const { aliasesForType } = require('../utils');
  * @returns {FlutureTMonetEither}
  * @throws {Error}
  * @constructor
+ *
+ * @example
+ *
+ * EitherT(Identity.of(1)); //=> Either.Right(1)
+ * EitherT(Either.Right(1)); //=> FlutureTMonetEither(1)
+ * EitherT(Future.of(1)); //=> FlutureTMonetEither(1)
+ * EitherT.of(Maybe.Some(1)); //=> EitherT<Maybe.Some(1)
  */
 function FlutureTMonetEither(monad) {
   if (isUndefined(new.target)) {
@@ -41,15 +48,25 @@ function FlutureTMonetEither(monad) {
 
 /**
  * @type {string}
+ * @example
+ *
+ * const { isFlutureTMonetEither } = require('monad-t/lib/FlutureTMonetEither/utils');
+ * const FlutureTMonetEither = require('monad-t/lib/FlutureTMonetEither');
+ *
+ * isFlutureTMonetEither(FlutureTMonetEither.fromValue(1)); //=> true
  */
 FlutureTMonetEither['@@type'] = 'FlutureTMonetEither';
 
 /**
- * Returns corresponding transformer for the monad.
+ * Creates a FlutureTMonetEither transformer from Either locked inside a Future.
  *
  * @method FlutureTMonetEither.of
  * @param {!Future} run Either wrapped in Future
  * @returns {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * FlutureTMonetEither.of(Future.of(Either.Right(1))); //=> FlutureTMonetEither(1)
  */
 FlutureTMonetEither[of] = function applicative(run) {
   return new this(run);
@@ -61,6 +78,10 @@ FlutureTMonetEither[of] = function applicative(run) {
  *
  * @param {*} val
  * @returns {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * FlutureTMonetEither.fromValue(1); //=> FlutureTMonetEither(1)
  */
 FlutureTMonetEither.fromValue = function fromValue(val) {
   return this[of](Future.of(Either.Right(val)));
@@ -72,6 +93,10 @@ FlutureTMonetEither.fromValue = function fromValue(val) {
  *
  * @param {Either} either
  * @returns {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * FlutureTMonetEither.fromEither(Either.Right(1)); //=> FlutureTMonetEither(1)
  */
 FlutureTMonetEither.fromEither = function fromEither(either) {
   return this[of](Future.of(either));
@@ -84,6 +109,10 @@ FlutureTMonetEither.fromEither = function fromEither(either) {
  *
  * @param {Future} future
  * @returns {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * FlutureTMonetEither.fromFuture(Future.of(1)); //=> FlutureTMonetEither(1)
  */
 FlutureTMonetEither.fromFuture = function fromFuture(future) {
   return this[of](future.map(Either.Right));
@@ -91,10 +120,28 @@ FlutureTMonetEither.fromFuture = function fromFuture(future) {
 
 /**
  * Returns a Future which caches the resolution value of the given Future so that
- * whenever it's forked, it can load the value from cache rather than reexecuting the chain.
+ * whenever it's forked, it can load the value from cache rather than re-executing the chain.
  *
  * @param {FlutureTMonetEither} futureEither
  * @returns {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * const loadDbRecordById = (id) => {
+ *   console.log('Retrieving record from db');
+ *   return DB.record.findById(id);
+ * }
+ *
+ * const loadFromDb = FlutureTMonetEither.cache(
+ *   FlutureTMonetEither.encaseP(loadSomethingFromDbById, 1)
+ * );
+ *
+ * loadFromDb.fork(console.error, console.log);
+ * //> "Retrieving record from db"
+ * //> {...record...}
+ *
+ * loadFromDb.fork(console.error, console.log);
+ * //> {...record...}
  */
 FlutureTMonetEither.cache = function cache(futureEither) {
   return this.of(Future.cache(futureEither.run));

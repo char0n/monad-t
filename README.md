@@ -31,8 +31,8 @@ We recommend to use requires from a specific modules of this library so that
 you won't end up with  `Cannot find module` error when requiring.
 
 ```javascript
-const { MonetEitherT: EitherT } = require('monad-t/src/MonetEitherT');
-const { FlutureTMonetEither: FutureTEither } = require('monad-t/src/FlutureTMonetEither');
+const EitherT = require('monad-t/lib/MonetEitherT');
+const FutureTEither = require('monad-t/lib/FlutureTMonetEither');
 
 
 EitherT(Identity.of(1)); //=> Either.Right(1)
@@ -49,7 +49,8 @@ FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 ## API Documentation
 
 [0.0.1](https://char0n.github.io/monad-t/0.0.2), [0.0.2](https://char0n.github.io/monad-t/0.0.2),
-[0.0.3](https://char0n.github.io/monad-t/0.0.3), [0.1.0](https://char0n.github.io/monad-t/0.1.0)
+[0.0.3](https://char0n.github.io/monad-t/0.0.3), [0.1.0](https://char0n.github.io/monad-t/0.1.0),
+[LATEST](https://char0n.github.io/monad-t/0.1.0)
 
 
 ### Author
