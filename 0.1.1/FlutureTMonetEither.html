@@ -74,7 +74,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line26">line 26</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -132,6 +132,14 @@ without calling new statement.</p>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>EitherT(Identity.of(1)); //=> Either.Right(1)
+EitherT(Either.Right(1)); //=> FlutureTMonetEither(1)
+EitherT(Future.of(1)); //=> FlutureTMonetEither(1)
+EitherT.of(Maybe.Some(1)); //=> EitherT&lt;Maybe.Some(1)</code></pre>
 
 
 
@@ -267,7 +275,7 @@ without calling new statement.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line45">line 45</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -330,6 +338,14 @@ without calling new statement.</p>
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const { isFlutureTMonetEither } = require('monad-t/lib/FlutureTMonetEither/utils');
+const FlutureTMonetEither = require('monad-t/lib/FlutureTMonetEither');
+
+isFlutureTMonetEither(FlutureTMonetEither.fromValue(1)); //=> true</code></pre>
+
+
 
         
             
@@ -344,7 +360,7 @@ without calling new statement.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line208">line 208</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line255">line 255</a>
     </li></ul></dd>
     
 
@@ -421,7 +437,7 @@ given the remaining argument(s).</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line220">line 220</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line267">line 267</a>
     </li></ul></dd>
     
 
@@ -492,7 +508,7 @@ given the remaining argument(s).</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line233">line 233</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line280">line 280</a>
     </li></ul></dd>
     
 
@@ -573,7 +589,7 @@ given the remaining argument(s).</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line133">line 133</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line180">line 180</a>
     </li></ul></dd>
     
 
@@ -756,7 +772,7 @@ with exactly two FlutureTMonetEithers.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line99">line 99</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line146">line 146</a>
     </li></ul></dd>
     
 
@@ -805,7 +821,7 @@ with exactly two FlutureTMonetEithers.</p>
 
 <div class="description">
     <p>Returns a Future which caches the resolution value of the given Future so that
-whenever it's forked, it can load the value from cache rather than reexecuting the chain.</p>
+whenever it's forked, it can load the value from cache rather than re-executing the chain.</p>
 </div>
 
 
@@ -814,6 +830,25 @@ whenever it's forked, it can load the value from cache rather than reexecuting t
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const loadDbRecordById = (id) => {
+  console.log('Retrieving record from db');
+  return DB.record.findById(id);
+}
+
+const loadFromDb = FlutureTMonetEither.cache(
+  FlutureTMonetEither.encaseP(loadSomethingFromDbById, 1)
+);
+
+loadFromDb.fork(console.error, console.log);
+//> "Retrieving record from db"
+//> {...record...}
+
+loadFromDb.fork(console.error, console.log);
+//> {...record...}</code></pre>
 
 
 
@@ -916,7 +951,7 @@ whenever it's forked, it can load the value from cache rather than reexecuting t
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line153">line 153</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line200">line 200</a>
     </li></ul></dd>
     
 
@@ -1083,7 +1118,7 @@ It's known as &quot;coroutines&quot; in Promise land, and &quot;do-notation&quot
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line76">line 76</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -1141,6 +1176,11 @@ the following composition: FlutureTMonetEither.of * Fluture.of</p>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromEither(Either.Right(1)); //=> FlutureTMonetEither(1)</code></pre>
 
 
 
@@ -1243,7 +1283,7 @@ the following composition: FlutureTMonetEither.of * Fluture.of</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line88">line 88</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1302,6 +1342,11 @@ into FlutureTMonetEither.</p>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromFuture(Future.of(1)); //=> FlutureTMonetEither(1)</code></pre>
 
 
 
@@ -1404,7 +1449,7 @@ into FlutureTMonetEither.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line65">line 65</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -1462,6 +1507,11 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromValue(1); //=> FlutureTMonetEither(1)</code></pre>
 
 
 
@@ -1564,7 +1614,7 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line191">line 191</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -1723,7 +1773,7 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line47">line 47</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -1771,7 +1821,7 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
 
 
 <div class="description">
-    <p>Returns corresponding transformer for the monad.</p>
+    <p>Creates a FlutureTMonetEither transformer from Either locked inside a Future.</p>
 </div>
 
 
@@ -1780,6 +1830,11 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.of(Future.of(Either.Right(1))); //=> FlutureTMonetEither(1)</code></pre>
 
 
 
@@ -1882,7 +1937,7 @@ the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.R
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line111">line 111</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line158">line 158</a>
     </li></ul></dd>
     
 
@@ -2065,7 +2120,7 @@ ensuring no more than limit Futures are running at once.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line244">line 244</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line291">line 291</a>
     </li></ul></dd>
     
 
@@ -2225,7 +2280,7 @@ the given function and resolves with its resolution value, or rejects with its r
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line320">line 320</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line367">line 367</a>
     </li></ul></dd>
     
 
@@ -2386,7 +2441,7 @@ This behaves analogously to how JavaScript's and-operator does.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line270">line 270</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line317">line 317</a>
     </li></ul></dd>
     
 
@@ -2550,7 +2605,7 @@ To learn more about the exact behaviour of chain.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line356">line 356</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line403">line 403</a>
     </li></ul></dd>
     
 
@@ -2710,7 +2765,7 @@ the supplied <code>fn</code>.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line368">line 368</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line415">line 415</a>
     </li></ul></dd>
     
 
@@ -2870,7 +2925,7 @@ the supplied <code>fn</code>.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line380">line 380</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line427">line 427</a>
     </li></ul></dd>
     
 
@@ -3056,7 +3111,7 @@ will filter out any elements that do not meet the predicate.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line305">line 305</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line352">line 352</a>
     </li></ul></dd>
     
 
@@ -3239,7 +3294,7 @@ at construction using the given reject and resolve callbacks.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line248">line 248</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line295">line 295</a>
     </li></ul></dd>
     
 
@@ -3403,7 +3458,7 @@ If the FlutureTMonetEither is rejected, the transformation is ignored. *</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line399">line 399</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line446">line 446</a>
     </li></ul></dd>
     
 
@@ -3563,7 +3618,7 @@ This is like map, but for the rejection branch.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line413">line 413</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line460">line 460</a>
     </li></ul></dd>
     
 
@@ -3678,7 +3733,7 @@ using it for anything else.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line342">line 342</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line389">line 389</a>
     </li></ul></dd>
     
 
@@ -3837,7 +3892,7 @@ using it for anything else.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line332">line 332</a>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line379">line 379</a>
     </li></ul></dd>
     
 
@@ -3997,7 +4052,7 @@ using it for anything else.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Fri Aug 25 2017 15:11:51 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Aug 28 2017 08:42:53 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
