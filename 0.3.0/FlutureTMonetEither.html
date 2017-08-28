@@ -1,0 +1,4061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FlutureTMonetEither - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<header>
+    <a href="index.html"><strong>monad-t 0.3.0</strong></a><ul><li><a href="https://npm.runkit.com/monad-t">Try</a></li><li><a href="https://char0n.github.io/monad-t/">Latest Docs</a></li><li><a href="https://github.com/char0n/monad-t">GitHub</a></li><li><a href="https://github.com/char0n/monad-t/issues">Discuss</a></li></ul>
+</header>
+
+<nav>
+    <h3>Classes</h3><ul><li><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></li><li><a href="MonetEitherT.html">MonetEitherT</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">FlutureTMonetEither</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        FlutureTMonetEither
+        </h2>
+        
+            <div class="class-description"><p>FlutureTMonetEither is a transformer that wraps <code>monet.Either</code> into
+<code>fluture.Future</code>.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+    <div id="FlutureTMonetEither" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>new FlutureTMonetEither<span class="signature">(monad)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Constructor for transforming monads. Call also be used as static function
+without calling new statement.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>EitherT(Identity.of(1)); //=> Either.Right(1)
+EitherT(Either.Right(1)); //=> FlutureTMonetEither(1)
+EitherT(Future.of(1)); //=> FlutureTMonetEither(1)
+EitherT.of(Maybe.Some(1)); //=> EitherT&lt;Maybe.Some(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>monad</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Identity</span>
+|
+
+<span class="param-type">Either</span>
+|
+
+<span class="param-type">Future</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc">
+    
+        
+<span class="param-type">Error</span>
+
+
+    
+    </div>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".'@@type'"><span class="type-signature">(static) </span>'@@type'<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const { isFlutureTMonetEither } = require('monad-t/lib/FlutureTMonetEither/utils');
+const FlutureTMonetEither = require('monad-t/lib/FlutureTMonetEither');
+
+isFlutureTMonetEither(FlutureTMonetEither.fromValue(1)); //=> true</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".encaseP"><span class="type-signature">(static) </span>encaseP<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line255">line 255</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Allows Promise-returning functions to be turned into FlutureTMonetEither-returning functions.</p>
+<p>Takes a function which returns a Promise, and a value, and returns a FlutureTMonetEither.
+When forked, the FlutureTMonetEither calls the function with the value to produce the Promise,
+and resolves with its resolution value, or rejects with its rejection reason.</p>
+<p>Partially applying encase with a function f allows us to create a &quot;safe&quot; version of f.
+Instead of throwing exceptions, the encased version always returns a FlutureTMonetEither when
+given the remaining argument(s).</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".encaseP2"><span class="type-signature">(static) </span>encaseP2<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line267">line 267</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Binary version of <code>encaseP</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".encaseP3"><span class="type-signature">(static) </span>encaseP3<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line280">line 280</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Ternary version of <code>encaseP</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+    <div id=".both" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>both<span class="signature">(futureEitherA, futureEitherB)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line180">line 180</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Run two FlutureTMonetEithers in parallel. Basically like calling FlutureTMonetEither.parallel
+with exactly two FlutureTMonetEithers.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>futureEitherA</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>futureEitherB</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".cache" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>cache<span class="signature">(futureEither)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line146">line 146</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Returns a Future which caches the resolution value of the given Future so that
+whenever it's forked, it can load the value from cache rather than re-executing the chain.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const loadDbRecordById = (id) => {
+  console.log('Retrieving record from db');
+  return DB.record.findById(id);
+}
+
+const loadFromDb = FlutureTMonetEither.cache(
+  FlutureTMonetEither.encaseP(loadSomethingFromDbById, 1)
+);
+
+loadFromDb.fork(console.error, console.log);
+//> "Retrieving record from db"
+//> {...record...}
+
+loadFromDb.fork(console.error, console.log);
+//> {...record...}</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>futureEither</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".do" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>do<span class="signature">(generator)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line200">line 200</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>A specialized version of fantasy-do which works only for Futures, but has the advantage
+of type-checking and not having to pass FlutureTMonetEither.of.
+Another advantage is that the returned FlutureTMonetEither can be forked
+multiple times, as opposed to with a general fantasy-do solution,
+where forking the FlutureTMonetEither a second time behaves erroneously.</p>
+<p>Takes a function which returns an Iterator, commonly a generator-function,
+and chains every produced FlutureTMonetEither over the previous.</p>
+<p>This allows for writing sequential asynchronous code without the pyramid of doom.
+It's known as &quot;coroutines&quot; in Promise land, and &quot;do-notation&quot; in Haskell land.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>generator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".fromEither" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>fromEither<span class="signature">(either)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line101">line 101</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates FlutureTMonetEither instance from an either, running it thought
+the following composition: FlutureTMonetEither.of * Fluture.of</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromEither(Either.Right(1)); //=> FlutureTMonetEither(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>either</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Either</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".fromFuture" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>fromFuture<span class="signature">(future)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates FlutureTMonetEither instance from a future, transforming the value
+locked inside the future into Either.Right, and then wrapping the future
+into FlutureTMonetEither.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromFuture(Future.of(1)); //=> FlutureTMonetEither(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>future</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Future</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".fromValue" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>fromValue<span class="signature">(val)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line86">line 86</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates FlutureTMonetEither instance from a value, running a value through
+the following composition: FlutureTMonetEither.of <em> Fluture.of </em> Either.Right</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.fromValue(1); //=> FlutureTMonetEither(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".go" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>go<span class="signature">(generator)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line238">line 238</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Alias of <code>do</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>generator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".of" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>of<span class="signature">(run<span class="signature-attributes">non-null</span>)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line60">line 60</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates a FlutureTMonetEither transformer from Either locked inside a Future.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>FlutureTMonetEither.of(Future.of(Either.Right(1))); //=> FlutureTMonetEither(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>run</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Future</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Either wrapped in Future</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".parallel" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>parallel<span class="signature">(runInParallelCount, futureEitherList)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Creates a Future which when forked runs all Futures in the given array in parallel,
+ensuring no more than limit Futures are running at once.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>runInParallelCount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>futureEitherList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id=".tryP" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>tryP<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Create a FlutureTMonetEither which when forked spawns a Promise using
+the given function and resolves with its resolution value, or rejects with its rejection reason.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="and" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>and<span class="signature">(futureEither)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line367">line 367</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Returns a new FlutureTMonetEither which either rejects with the first rejection reason,
+or resolves with the last resolution value once and if both FlutureTMonetEither resolve.
+This behaves analogously to how JavaScript's and-operator does.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>futureEither</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="chain" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>chain<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line317">line 317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Allows the creation of a new FlutureTMonetEither based on the resolution value.
+This is like doing promise.then(x =&gt; Promise.resolve(x + 1)), except that it's lazy,
+so the new FlutureTMonetEither will not be created until the other one is forked.
+The function is only ever applied to the resolution value;
+it's ignored when the FlutureTMonetEither was rejected.
+To learn more about the exact behaviour of chain.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="chainEither" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>chainEither<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line403">line 403</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Method for chaining inner Either with an either returned by
+the supplied <code>fn</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function generating new Either</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="chainFuture" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>chainFuture<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line415">line 415</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Method for chaining inner Future with an Future returned by
+the supplied <code>fn</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function generating new Future</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="filter" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>filter<span class="signature">(predicate, fnOrValue)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line427">line 427</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Very similar to the filtering of a list, filter on FlutureTMonetEither
+will filter out any elements that do not meet the predicate.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>predicate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fnOrValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="fork" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fork<span class="signature">(leftFn, rightFn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line352">line 352</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Execute the computation that was passed to the FlutureTMonetEither
+at construction using the given reject and resolve callbacks.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>leftFn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rightFn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="map" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>map<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line295">line 295</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Transforms the resolution value inside the FlutureTMonetEither, and returns
+a new FlutureTMonetEither with the transformed value.
+This is like doing promise.then(x =&gt; x + 1), except that it's lazy,
+so the transformation will not be applied before the FlutureTMonetEither is forked.
+The transformation is only applied to the resolution branch:
+If the FlutureTMonetEither is rejected, the transformation is ignored. *</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="mapRej" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>mapRej<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line446">line 446</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Map over the rejection reason of the FlutureTMonetEither.
+This is like map, but for the rejection branch.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="promise" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>promise<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line460">line 460</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>An alternative way to fork the FlutureTMonetEither.
+This eagerly forks the FlutureTMonetEither and
+returns a Promise of the result. This is useful if some API wants you
+to give it a Promise. It's the only method which forks the Future without
+a forced way to handle the rejection branch, so I recommend against
+using it for anything else.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="tap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>tap<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line389">line 389</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Method for isolating side effects.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="tapF" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>tapF<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="FlutureTMonetEither.html">FlutureTMonetEither</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="FlutureTMonetEither_index.js.html">FlutureTMonetEither/index.js</a>, <a href="FlutureTMonetEither_index.js.html#line379">line 379</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Method for isolating asynchronous side effects.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function returning new instance of FlutureTMonetEither.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="FlutureTMonetEither.html">FlutureTMonetEither</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Aug 28 2017 18:00:36 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
