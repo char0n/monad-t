@@ -133,7 +133,7 @@ MonetEitherT.prototype[map] = function functor(fn) {
   if (!this.isRightValue) { return this }
 
   return this.constructor.of(
-    this.run.map(v => v.map(fn))
+    this.run[map](fn)
   );
 };
 
@@ -150,7 +150,7 @@ MonetEitherT.prototype[chain] = function flatMap(fn) {
   if (!this.isRightValue) { return this }
 
   return this.constructor.of(
-    this.run.map(v => v[chain](fn))
+    this.run[chain](v => fn(v).run)
   );
 };
 
@@ -167,13 +167,7 @@ MonetEitherT.prototype[chain] = function flatMap(fn) {
 MonetEitherT.prototype[ap] = function apply(monadWithFn) {
   if (!this.isRightValue) { return this }
 
-  return this.constructor.of(
-    this.run[chain](v =>
-      monadWithFn.run.map(v2 =>
-        v[ap](v2)
-      )
-    )
-  );
+  return monadWithFn.chain(fn => this.map(fn));
 };
 
 aliasesForType(MonetEitherT);

@@ -20,15 +20,15 @@ class Monad {
   }
 
   [fl.map](fn) {
-    return functorTrait.call(this, fn);
+    return functorTrait[fl.map].call(this, fn);
   }
 
   [fl.chain](fn) {
-    return chainTrait.call(this, fn);
+    return chainTrait[fl.chain].call(this, fn);
   }
 
   [fl.ap](applyWithFn) {
-    return applyTrait.call(this, applyWithFn);
+    return applyTrait[fl.ap].call(this, applyWithFn);
   }
 }
 
