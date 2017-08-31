@@ -413,7 +413,6 @@ FlutureTMonetEither.prototype.chainEither = function chainEither(fn) {
  */
 
 FlutureTMonetEither.prototype.chainFuture = function chainFuture(fn) {
-  // return this.constructor.of(this.run.chain(fn));
   return this.chain(v => this.constructor.fromFuture(fn(v)));
 };
 
