@@ -419,7 +419,7 @@ describe('FlutureTMonetEither', function() {
   it('tests chainFuture', function(done) {
     FlutureTMonetEither
       .fromValue(1)
-      .chainFuture(() => Future.of(Either.Right(2)))
+      .chainFuture(() => Future.of(2))
       .fork(
         noop,
         (val) => {

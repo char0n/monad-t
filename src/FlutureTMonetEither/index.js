@@ -406,14 +406,15 @@ FlutureTMonetEither.prototype.chainEither = function chainEither(fn) {
 
 /**
  * Method for chaining inner Future with an Future returned by
- * the supplied `fn`.
+ * the supplied `fn`. Future instance should not have value inside it, not Either.
  *
  * @param {Function} fn The function generating new Future
  * @returns {FlutureTMonetEither}
  */
 
 FlutureTMonetEither.prototype.chainFuture = function chainFuture(fn) {
-  return this.constructor.of(this.run.chain(fn));
+  // return this.constructor.of(this.run.chain(fn));
+  return this.chain(v => this.constructor.fromFuture(fn(v)));
 };
 
 /**
