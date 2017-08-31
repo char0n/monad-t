@@ -2,6 +2,8 @@
 
 Transformers for monadic algebraic structures bridging types from various monadic libraries.
 All transformers are fully [fantasy-land](https://github.com/fantasyland/fantasy-land) compatible.
+Read [this article](https://www.linkedin.com/pulse/monad-transformers-javascript-vladim%C3%ADr-gorej)
+to fully understand what monad transformers are and how to fully utilize their power of transformation.
 
 ## Example
 
