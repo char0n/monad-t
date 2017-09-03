@@ -1,3 +1,14 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/char0n/monad-t/compare/v0.2.1...v0.2.2) (2017-09-03)
+
+
+### Bug Fixes
+
+* **FlutureTMonetEither:** fix chainFuture ([446e1ab](https://github.com/char0n/monad-t/commit/446e1ab)), closes [#5](https://github.com/char0n/monad-t/issues/5)
+* **MonetEitherT:** fix stacking alghorytms ([66660e1](https://github.com/char0n/monad-t/commit/66660e1))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/char0n/monad-t/compare/v0.2.0...v0.2.1) (2017-08-28)
 
