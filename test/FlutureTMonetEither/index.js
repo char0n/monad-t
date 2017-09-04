@@ -4,7 +4,7 @@ const Future = require('fluture');
 const { Either } = require('monet');
 const { noop } = require('ramda-adjunct');
 const sinon = require('sinon');
-const { sum } = require('ramda');
+const { sum, always } = require('ramda');
 const chai = require('chai');
 
 const FlutureTMonetEither = require('../../src/FlutureTMonetEither');
@@ -350,7 +350,7 @@ describe('FlutureTMonetEither', function() {
       );
   });
 
-  it('tests and', function(done) {
+  it('tests and resolve', function(done) {
     FlutureTMonetEither
       .fromValue(1)
       .and(FlutureTMonetEither.fromValue(2))
@@ -363,7 +363,68 @@ describe('FlutureTMonetEither', function() {
       );
   });
 
-  it('tests tapF', function(done) {
+  it('tests and rejected future', function(done) {
+    FlutureTMonetEither
+      .fromFuture(Future.reject('error1'))
+      .and(FlutureTMonetEither.fromEither(Either.Left('error2')))
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error1');
+          done();
+        },
+        noop
+      );
+  });
+
+  it('tests and Either.Left in first FTE', function(done) {
+    FlutureTMonetEither
+      .fromFuture(Future.of('val'))
+      .filter(always(false), 'error')
+      .and(FlutureTMonetEither.fromEither(Either.Right('val')))
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error');
+          done();
+        },
+        noop
+      );
+  });
+
+  it('tests and Either.Left in second FTE', function(done) {
+    FlutureTMonetEither
+      .fromFuture(Future.of('val'))
+      .and(FlutureTMonetEither
+        .fromEither(Either.Right('val'))
+        .filter(always(false), 'error')
+      )
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error');
+          done();
+        },
+        noop
+      );
+  });
+
+  it('tests and Either.Left in both FTEs', function(done) {
+    FlutureTMonetEither
+      .fromFuture(Future.of('val'))
+      .filter(always(false), 'error1')
+      .and(FlutureTMonetEither
+        .fromEither(Either.Right('val'))
+        .filter(always(false), 'error2')
+      )
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error1');
+          done();
+        },
+        noop
+      );
+  });
+
+
+  it('tests tapF resolve', function(done) {
     FlutureTMonetEither
       .fromValue(1)
       .tapF(() => FlutureTMonetEither.fromValue(2))
@@ -373,6 +434,37 @@ describe('FlutureTMonetEither', function() {
           assert.strictEqual(val, 1);
           done();
         }
+      );
+  });
+
+  it('tests tapF rejected Future', function(done) {
+    FlutureTMonetEither
+      .fromValue(1)
+      .tapF(() => FlutureTMonetEither
+        .fromFuture(Future.reject('error'))
+      )
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error');
+          done();
+        },
+        noop
+      );
+  });
+
+  it('tests tapF Either.Left case', function(done) {
+    FlutureTMonetEither
+      .fromValue(1)
+      .tapF(() => FlutureTMonetEither
+        .fromValue(2)
+        .filter(always(false), 'error')
+      )
+      .fork(
+        (val) => {
+          assert.strictEqual(val, 'error');
+          done();
+        },
+        noop
       );
   });
 

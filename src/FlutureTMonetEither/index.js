@@ -366,7 +366,14 @@ FlutureTMonetEither.prototype.fork = function fork(leftFn, rightFn) {
  */
 FlutureTMonetEither.prototype.and = function and(futureEither) {
   return this.constructor.of(
-    this.run.and(futureEither.run)
+    Future.of(curry((e1, e2) => {
+      if (e1.isLeft()) {
+        return e1;
+      }
+      return e2;
+    }))
+      .ap(this.run)
+      .ap(futureEither.run)
   );
 };
 
