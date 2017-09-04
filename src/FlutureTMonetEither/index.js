@@ -1,6 +1,6 @@
 'use strict';
 
-const { prop, chain: chainR, pair, curry } = require('ramda');
+const { prop, chain: chainR, pair, curry, always } = require('ramda');
 const { isUndefined, isFunction, isGeneratorFunction } = require('ramda-adjunct');
 const { of, map, chain } = require('fantasy-land');
 const { Either, Identity } = require('monet');
@@ -366,12 +366,8 @@ FlutureTMonetEither.prototype.fork = function fork(leftFn, rightFn) {
  */
 FlutureTMonetEither.prototype.and = function and(futureEither) {
   return this.constructor.of(
-    Future.of(curry((e1, e2) => {
-      if (e1.isLeft()) {
-        return e1;
-      }
-      return e2;
-    }))
+    Future
+      .of(either1 => either2 => either1.chain(always(either2)))
       .ap(this.run)
       .ap(futureEither.run)
   );
