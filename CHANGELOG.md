@@ -1,3 +1,14 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/char0n/monad-t/compare/v0.2.2...v0.2.3) (2017-09-05)
+
+
+### Bug Fixes
+
+* **andOperator:** implement checking of nested Either ([0a9f757](https://github.com/char0n/monad-t/commit/0a9f757))
+* **andOperator:** add more elegant syntax ([73074c7](https://github.com/char0n/monad-t/commit/73074c7))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/char0n/monad-t/compare/v0.2.1...v0.2.2) (2017-09-03)
 
