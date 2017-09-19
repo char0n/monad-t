@@ -451,6 +451,20 @@ FlutureTMonetEither.prototype.mapRej = function mapRej(fn) {
 };
 
 /**
+ * Map over left side of the Either.
+ *
+ * @param {Function} fn
+ * @return {FlutureTMonetEither}
+ */
+FlutureTMonetEither.prototype.leftMap = function leftMap(fn) {
+  return this.constructor.of(
+    this.run[map](
+      either => either.leftMap(fn)
+    )
+  );
+};
+
+/**
  * An alternative way to fork the FlutureTMonetEither.
  * This eagerly forks the FlutureTMonetEither and
  * returns a Promise of the result. This is useful if some API wants you
