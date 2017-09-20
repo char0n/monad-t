@@ -56,6 +56,10 @@ FutureTEither(Either.Right(1)); //=> FlutureTMonetEither(1)
 [0.2.2](https://char0n.github.io/monad-t/0.2.2), [0.2.3](https://char0n.github.io/monad-t/0.2.3),
 [LATEST](https://char0n.github.io/monad-t/0.2.3)
 
+## Typescript support
+
+Although `monad-t` is written in ES2016, we support Typescript. When `monad-t` gets
+imported into Typescript project, typings are automatically imported and used.
 
 ### Author
 
