@@ -14,6 +14,7 @@ declare module "monad-t" {
     filter(predicate: (arg: any) => boolean, fnOrValue: any): FlutureTMonetEither
     fork(leftFn: (err: any) => void, rightFn: (val: any) => void): Cancellable
     map(fn: (arg: any) => any): FlutureTMonetEither
+    leftMap(fn: (arg: any) => any): FlutureTMonetEither
     mapRej(fn: (arg: any) => any): FlutureTMonetEither
     promise(): Promise<any>
     tap(fn: (val: any) => any): FlutureTMonetEither
