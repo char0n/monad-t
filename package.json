@@ -63,7 +63,7 @@
     "eslint-plugin-jsx-a11y": "=5.1.1",
     "eslint-plugin-react": "=7.1.0",
     "fluture": "=7.0.1",
-    "jsdoc": "=3.5.3",
+    "jsdoc": "=3.5.5",
     "mocha": "=3.4.2",
     "mocha-junit-reporter": "=1.13.0",
     "mocha-multi-reporters": "=1.1.4",
