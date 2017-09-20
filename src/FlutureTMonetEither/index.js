@@ -455,6 +455,12 @@ FlutureTMonetEither.prototype.mapRej = function mapRej(fn) {
  *
  * @param {Function} fn
  * @return {FlutureTMonetEither}
+ *
+ * @example
+ *
+ * FlutureTMonetEither
+ *   .fromEither(Either.Left(1))
+ *   .leftMap(value => value + 1); //=> FlutureTMonetEither.<Future.<Either.Left(2)>>
  */
 FlutureTMonetEither.prototype.leftMap = function leftMap(fn) {
   return this.constructor.of(

@@ -670,8 +670,49 @@ describe('FlutureTMonetEither', function() {
     });
   });
 
+  describe('tests tryP', () => {
+    it('tests calling futureEither.encaseP under the hood', (done) => {
+      const expectedVal = undefined;
+      const fn = sinon.stub().returns(Promise.resolve(expectedVal));
+
+      FlutureTMonetEither
+        .tryP(fn)
+        .fork(
+          noop,
+          (val) => {
+            sinon.assert.calledOnce(fn);
+            sinon.assert.calledWithExactly(fn, undefined);
+            assert.strictEqual(val, expectedVal);
+            done();
+          }
+        );
+    });
+  });
+
+  describe('mapRej', () => {
+    it('tests rejection (remapped)', (done) => {
+      FlutureTMonetEither.encaseP(Promise.reject.bind(Promise), 1)
+        .mapRej(val => val + 1)
+        .promise()
+        .catch((e) => {
+          assert.strictEqual(e, 2);
+          done();
+        });
+    });
+
+    it('tests rejection (plain)', (done) => {
+      FlutureTMonetEither.encaseP(Promise.reject.bind(Promise), 1)
+        .map(val => val + 1)
+        .promise()
+        .catch((e) => {
+          assert.strictEqual(e, 1);
+          done();
+        });
+    });
+  });
+
   describe('tests filter', function() {
-    it('tests successful predicate + transformer', function(done) {
+    it('tests successful predicate + transformer', function (done) {
       const transformer = sinon.spy();
 
       FlutureTMonetEither
@@ -685,47 +726,6 @@ describe('FlutureTMonetEither', function() {
             done();
           }
         );
-    });
-
-    describe('tests tryP', () => {
-      it('tests calling futureEither.encaseP under the hood', (done) => {
-        const expectedVal = undefined;
-        const fn = sinon.stub().returns(Promise.resolve(expectedVal));
-
-        FlutureTMonetEither
-          .tryP(fn)
-          .fork(
-            noop,
-            (val) => {
-              sinon.assert.calledOnce(fn);
-              sinon.assert.calledWithExactly(fn, undefined);
-              assert.strictEqual(val, expectedVal);
-              done();
-            }
-          );
-      });
-    });
-
-    describe('mapRej', () => {
-      it('tests rejection (remapped)', (done) => {
-        FlutureTMonetEither.encaseP(Promise.reject.bind(Promise), 1)
-          .mapRej(val => val + 1)
-          .promise()
-          .catch((e) => {
-            assert.strictEqual(e, 2);
-            done();
-          });
-      });
-
-      it('tests rejection (plain)', (done) => {
-        FlutureTMonetEither.encaseP(Promise.reject.bind(Promise), 1)
-          .map(val => val + 1)
-          .promise()
-          .catch((e) => {
-            assert.strictEqual(e, 1);
-            done();
-          });
-      });
     });
 
     it('tests unsuccessful predicate + transformer', function(done) {
@@ -758,6 +758,34 @@ describe('FlutureTMonetEither', function() {
             done();
           },
           noop
+        );
+    });
+  });
+
+  describe('leftMap', function() {
+    it('tests mapping the left', function(done) {
+      FlutureTMonetEither
+        .fromEither(Either.Left(1))
+        .leftMap(val => val + 1)
+        .fork(
+          (val) => {
+            assert.strictEqual(val, 2);
+            done();
+          },
+          noop
+        );
+    });
+
+    it('tests not mapping the right', function(done) {
+      FlutureTMonetEither
+        .fromEither(Either.Right(1))
+        .leftMap(val => val + 1)
+        .fork(
+          noop,
+          (val) => {
+            assert.strictEqual(val, 1);
+            done();
+          }
         );
     });
   });
