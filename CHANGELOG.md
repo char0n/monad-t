@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/char0n/monad-t/compare/v0.2.3...v0.3.0) (2017-10-17)
+
+
+### Features
+
+* **FlutureTMonetEither:** add leftMap ([ecda223](https://github.com/char0n/monad-t/commit/ecda223))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/char0n/monad-t/compare/v0.2.2...v0.2.3) (2017-09-05)
 
